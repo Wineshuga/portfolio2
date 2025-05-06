@@ -1,7 +1,15 @@
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Skills from "./components/Skills";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline text-center">Hello world!</h1>
+      <Navbar />
+      <main className="bg-black p-4">
+        <Hero />
+        <Skills />
+      </main>
     </>
   );
 }
