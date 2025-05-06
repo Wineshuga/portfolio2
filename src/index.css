@@ -1,2 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'baybin';
+  src: url('./fonts/baybin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-baybin {
+  font-family: 'baybin', sans-serif;
+}
