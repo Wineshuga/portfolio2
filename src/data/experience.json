@@ -1,0 +1,53 @@
+[
+  {
+    "company": "Sovereign Technology and Innovations LTD",
+    "position": "Frontend Developer",
+    "date": "2024 - present",
+    "description":
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+    "skills": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Git",
+      "Tailwind CSS",
+      "Redux"
+    ]
+  },
+  {
+    "company": "Freelance",
+    "position": "Full Stack Developer",
+    "date": "2023 - Present",
+    "description":
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+    "skills": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "JavaScript",
+      "Git",
+      "Tailwind CSS",
+      "Material UI",
+      "Firebase",
+      "Next.js",
+      "GitHub",
+      "Redux",
+      "Ruby on Rails"
+    ]
+  },
+  {
+    "company": "The Just Projects",
+    "position": "Frontend Developer Mentor",
+    "date": "2023 - 2024",
+    "description":
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  }
+]
