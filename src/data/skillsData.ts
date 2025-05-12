@@ -1,7 +1,7 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaGithub, FaNpm } from "react-icons/fa";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
-import { SiTypescript, SiTailwindcss, SiMui, SiRedux, SiRubyonrails } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMui, SiRedux, SiRubyonrails } from "react-icons/si";
 import type { ReactNode } from "react";
 
 type Skill = {
@@ -45,6 +45,10 @@ const skillsData: Skill[] = [
   {
     name: "Firebase",
     icon: React.createElement(IoLogoFirebase, { color: "yellow", size: "3rem" }),
+  },
+  {
+    name: "Next.js",
+    icon: React.createElement(SiNextdotjs, { size: "3rem" }),
   },
   {
     name: "GitHub",
