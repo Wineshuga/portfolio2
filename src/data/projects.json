@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/vite.svg",
+    "title": "Project One",
+    "description": "This is a description of project one. It showcases the main features and technologies used.",
+    "technologies": [
+      "React",
+      "JavaScript",
+      "CSS"
+    ],
+    "link": "https://example.com/project-one",
+    "github": ""
+  },
+  {
+    "image": "/vite.svg",
+    "title": "Project Two",
+    "description": "This is a description of project two. It showcases the main features and technologies used.",
+    "technologies": [
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "link": "https://example.com/project-two",
+    "github": ""
+  },
+  {
+    "image": "/vite.svg",
+    "title": "Project Three",
+    "description": "This is a description of project three. It showcases the main features and technologies used.",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "link": "",
+    "github": ""
+  }
+]
