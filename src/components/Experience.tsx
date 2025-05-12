@@ -21,12 +21,12 @@ const Experience = () => {
             key={index}
             className="flex md:flex-row flex-col justify-between items-start my-8 md:w-10/12 mx-auto md:gap-20"
           >
-            <div>
+            <div className="w-1/12">
               <p className="text-sm text-nowrap mb-3 md:mb-0">
                 {experience.date}
               </p>
             </div>
-            <article className="">
+            <article className="w-11/12">
               <h3 className="text-2xl font-semibold mb-3">
                 {experience.position} -{" "}
                 <span className="text-purple-300">{experience.company}</span>
