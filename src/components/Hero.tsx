@@ -9,15 +9,21 @@ const Hero = () => {
       <section className="md:w-1/2">
         <h1 className="sm:text-5xl text-2xl">Uzochukwu Winnie</h1>
         <h2 className="sm:text-2xl text-base md:my-10 my-5">
-          Full-Stack Web Developer
+          Frontend Engineer
         </h2>
         <article className="text-sm sm:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          corrupti minima delectus vel culpa eum quis quam natus provident,
-          ipsam sapiente distinctio accusamus enim expedita magnam quidem
-          accusantium aut rem quae fuga voluptate exercitationem id. Quas magni
-          eaque saepe possimus perspiciatis aliquid nihil facilis, natus
-          mollitia cupiditate id, laborum quasi!
+          <p>
+            I’m a frontend engineer passionate about building responsive,
+            accessible, and user-centered web applications. My experience spans
+            React, Next.js, TypeScript, and Tailwind — with growing skills in
+            full-stack development.
+          </p>
+          <p>
+            I’m always curious about new technologies, open source
+            collaboration, and how great design meets clean code. Beyond
+            development, I love sharing what I learn and building products that
+            make a difference.
+          </p>
         </article>
         <button type="button" className="p-2 border my-3">
           Resume

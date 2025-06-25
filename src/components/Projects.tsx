@@ -11,10 +11,10 @@ const Projects = () => {
           key={index}
           className="flex md:flex-row flex-col justify-between items-start my-8 md:w-10/12 mx-auto md:gap-20"
         >
-          <div className="w-1/12">
+          <div className="w-3/12">
             <img src={project.image} alt={project.title} />
           </div>
-          <article className="w-11/12">
+          <article className="w-9/12">
             <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
             <p className="mb-3">{project.description}</p>
             <ul className="flex gap-3 items-start flex-wrap">
@@ -28,26 +28,34 @@ const Projects = () => {
               ))}
             </ul>
             <section className="flex gap-3 items-center my-3 text-sm">
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <button
-                  type="button"
-                  className="p-2 border-2 rounded-md cursor-pointer"
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Demo Link
-                </button>
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button
-                  type="button"
-                  className="p-2 border-2 rounded-md cursor-pointer"
+                  <button
+                    type="button"
+                    className="p-2 border-2 rounded-md cursor-pointer"
+                  >
+                    Live Link
+                  </button>
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  GitHub Link
-                </button>
-              </a>
+                  <button
+                    type="button"
+                    className="p-2 border-2 rounded-md cursor-pointer"
+                  >
+                    GitHub Link
+                  </button>
+                </a>
+              )}
             </section>
           </article>
         </section>

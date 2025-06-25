@@ -1,36 +1,45 @@
 [
   {
-    "image": "/vite.svg",
-    "title": "Project One",
-    "description": "This is a description of project one. It showcases the main features and technologies used.",
+    "image": "/images/status-tracker.png",
+    "title": "Status Tracker",
+    "description": "Status Tracker pushed me to grow as a problem solver. I was brought into an existing codebase that lacked proper error handling and was throwing a persistent 500 error. I had to dive deep into the system and trace the root of the issue — outdated dependencies that were silently breaking the app. Along the way, I had to quickly get up to speed with unfamiliar tools like GraphQL, Prisma, and Next.js, while also working with several third-party applications.The project not only sharpened my debugging and backend skills but also reinforced the importance of graceful error handling in delivering a smooth user experience. In the end, I delivered a more stable and scalable application that met the client’s expectations and laid the groundwork for future growth.",
+    "technologies": [
+      "Next.js",
+      "GraphQL",
+      "Prisma",
+      "Material UI",
+      "Tawk.io",
+      "Twilio",
+      "Beam Analytics",
+      "Stripe"
+    ],
+    "link": "https://statustracker.app/",
+    "github": ""
+  },
+  {
+    "image": "/images/guava.png",
+    "title": "GuavaFi Website",
+    "description": "GuavaFi needed a fast, clean, and engaging website to showcase their product and services — and they needed it quickly. I was responsible for designing and developing a user-friendly, visually appealing interface that highlighted the key features of their offerings.\nMidway through development, the timeline was significantly reduced due to a shift in client priorities. This turned the project into a fast-paced challenge that pushed me to prioritize key features, streamline my workflow, and communicate closely with the client.\nThis experience taught me how to adapt quickly, manage expectations, and deliver quality under pressure — all while keeping the user experience front and center.",
     "technologies": [
       "React",
-      "JavaScript",
-      "CSS"
+      "Vite",
+      "Tailwind CSS",
+      "AOS"
     ],
-    "link": "https://example.com/project-one",
+    "link": "https://guava.finance/",
     "github": ""
   },
   {
-    "image": "/vite.svg",
-    "title": "Project Two",
-    "description": "This is a description of project two. It showcases the main features and technologies used.",
+    "image": "/images/foodbank.png",
+    "title": "FoodBank Admin Portal",
+    "description": "This was the largest project I’ve built from scratch and one of the most rewarding learning experiences in my journey so far. I developed an admin dashboard for a food bank organization, focusing on managing food loans, distributions, user roles, and financial transactions.\n\nWorking on this project pushed me to deeply understand role-based access control, secure data handling, and intuitive UI design for non-technical users. One of the biggest takeaways was learning the value of planning ahead and continuously testing with real users. I also implemented data visualizations using charts to help admins make sense of distributions at a glance.",
     "technologies": [
-      "Node.js",
-      "Express",
-      "MongoDB"
-    ],
-    "link": "https://example.com/project-two",
-    "github": ""
-  },
-  {
-    "image": "/vite.svg",
-    "title": "Project Three",
-    "description": "This is a description of project three. It showcases the main features and technologies used.",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "React",
+      "TypeScript",
+      "REST API",
+      "Tailwind CSS",
+      "Chart.js",
+      "Git"
     ],
     "link": "",
     "github": ""

@@ -1,10 +1,10 @@
 [
   {
     "company": "Sovereign Technology and Innovations LTD",
-    "position": "Frontend Developer",
+    "position": "Frontend Engineer",
     "date": "2024 - present",
     "description":
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+      "At Sovereign Tech, I’ve played a key role in designing and developing multiple web applications that directly support the company’s growth and user engagement. As a frontend engineer, I collaborate closely with cross-functional teams to turn ideas into responsive, accessible, and performant digital products. My responsibilities include translating design mockups into functional code, optimizing applications for speed and scalability, and ensuring a seamless user experience across devices.\n\nOne of my proudest achievements here has been leading the development of features that directly improve business productivity — showcasing not only my technical skills, but also my ability to align user needs with business goals and deliver real value through clean, thoughtful code.",
     "skills": [
       "React",
       "JavaScript",
@@ -21,12 +21,9 @@
     "position": "Full Stack Developer",
     "date": "2023 - Present",
     "description":
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+      "During this period, I have focused on developing fullstack applications while deepening my problem-solving, collaboration, and software engineering skills. I have actively sought for opportunities to contribute to open-source projects, completed an intensive remote software engineering program, and worked with developers from around the world on real-world projects.I Built and deployed multiple projects in distributed teams, often taking initiative in planning sprints, assigning tasks, and resolving blockers through clear communication and shared accountability",
     "skills": [
       "React",
-      "Node.js",
-      "MongoDB",
-      "Express",
       "JavaScript",
       "Git",
       "Tailwind CSS",
@@ -43,11 +40,12 @@
     "position": "Frontend Developer Mentor",
     "date": "2023 - 2024",
     "description":
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti minima delectus vel culpa eum quis quam natus provident, ipsam sapiente distinctio accusamus enim expedita magnam quidem accusantium aut rem quae fuga voluptate exercitationem id. Quas magni eaque saepe possimus perspiciatis aliquid nihil facilis, natus mollitia cupiditate id, laborum quasi!",
+      "As a mentor with the JUST Project, I supported aspiring frontend developers in building strong foundational skills and gaining real-world coding experience. I worked closely with mentees, guiding them through project work, code challenges, and essential frontend concepts. I led mentorship sessions to explain frontend concepts, review code submissions, and provide constructive feedback to help them improve their coding skills and confidence.\n\nThis role not only allowed me to share my knowledge and experience but also reinforced my own understanding of frontend development principles. It was incredibly rewarding to see mentees grow from beginners to confident developers ready to tackle real-world challenges.",
     "skills": [
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "Mentoring"
     ]
   }
 ]
