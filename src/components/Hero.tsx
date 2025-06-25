@@ -2,7 +2,10 @@ import Winnie from "/images/winnie.jpg";
 
 const Hero = () => {
   return (
-    <section className="flex text-white flex-col md:flex-row items-end justify-between md:gap-10 lg:gap-5 gap-5 my-20">
+    <section
+      id="hero"
+      className="flex text-white flex-col md:flex-row items-end justify-between md:gap-10 lg:gap-5 gap-5 my-20"
+    >
       <section className="md:w-1/2">
         <h1 className="sm:text-5xl text-2xl">Uzochukwu Winnie</h1>
         <h2 className="sm:text-2xl text-base md:my-10 my-5">
