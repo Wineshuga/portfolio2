@@ -31,7 +31,7 @@
   },
   {
     "image": "/images/foodbank.png",
-    "title": "FoodBank Admin Site",
+    "title": "FoodBank Admin Portal",
     "description": "This was the largest project I’ve built from scratch and one of the most rewarding learning experiences in my journey so far. I developed an admin dashboard for a food bank organization, focusing on managing food loans, distributions, user roles, and financial transactions.\n\nWorking on this project pushed me to deeply understand role-based access control, secure data handling, and intuitive UI design for non-technical users. One of the biggest takeaways was learning the value of planning ahead and continuously testing with real users. I also implemented data visualizations using charts to help admins make sense of distributions at a glance.",
     "technologies": [
       "React",
