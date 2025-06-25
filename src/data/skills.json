@@ -1,0 +1,70 @@
+[
+  {
+    "name": "HTML",
+    "icon": "FaHtml5",
+    "color": "#E34F26"
+  },
+  {
+    "name": "CSS",
+    "icon": "FaCss3Alt",
+    "color": "#1572B6"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "IoLogoJavascript",
+    "color": "#F7DF1E"
+  },
+  {
+    "name": "React.js",
+    "icon": "FaReact",
+    "color": "#61DAFB"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "SiTypescript",
+    "color": "#3178C6"
+  },
+  {
+    "name": "Tailwind",
+    "icon": "SiTailwindcss",
+    "color": "#06B6D4"
+  },
+  {
+    "name": "Material UI",
+    "icon": "SiMui",
+    "color": "#007FFF"
+  },
+  {
+    "name": "Git",
+    "icon": "FaGitAlt",
+    "color": "#F05032"
+  },
+  {
+    "name": "Firebase",
+    "icon": "IoLogoFirebase",
+    "color": "#FFCA28"
+  },
+  {
+    "name": "Next.js",
+    "icon": "SiNextdotjs"
+  },
+  {
+    "name": "GitHub",
+    "icon": "FaGithub"
+  },
+  {
+    "name": "NPM",
+    "icon": "FaNpm",
+    "color": "#CB3837"
+  },
+  {
+    "name": "Redux",
+    "icon": "SiRedux",
+    "color": "#764ABC"
+  },
+  {
+    "name": "Ruby on Rails",
+    "icon": "SiRubyonrails",
+    "color": "#CC0000"
+  }
+]
