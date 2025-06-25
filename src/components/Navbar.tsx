@@ -25,7 +25,9 @@ const Navbar = () => {
   return (
     <header
       className={`flex justify-between items-center p-4 bg-black text-white transition-all duration-300 z-50 ${
-        isSticky ? "fixed top-0 left-0 w-full shadow-lg" : "relative"
+        isSticky
+          ? "fixed top-0 left-0 w-full shadow-lg border-b border-gray-700"
+          : "relative"
       }`}
     >
       <p className="font-baybin text-5xl cursor-default tracking-tight">UW</p>
