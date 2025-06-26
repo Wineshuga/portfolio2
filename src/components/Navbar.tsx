@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav>
         <ul className="flex gap-4">
           <li
-            className="cursor-pointer border-[1px] border-white p-1 rounded-sm hover:scale-110 transition-all duration-300"
+            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
             title="Github"
           >
             <a
@@ -47,7 +47,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className="cursor-pointer border-[1px] border-white p-1 rounded-sm hover:scale-110 transition-all duration-300"
+            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
             title="Linkedin"
           >
             <a
@@ -59,7 +59,7 @@ const Navbar = () => {
             </a>
           </li>
           <li
-            className="cursor-pointer border-[1px] border-white p-1 rounded-sm hover:scale-110 transition-all duration-300"
+            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
             title="Medium"
           >
             <a

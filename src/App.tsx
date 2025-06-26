@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="bg-black p-4">
+      <main className="bg-black p-4 font-nunito">
         <Hero />
         <Skills />
         <Experience />
