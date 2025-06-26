@@ -27,7 +27,13 @@ const Hero = () => {
           type="button"
           className="p-2 border-2 border-gray-700 hover:border-gray-500 transition-all duration-500 my-3 font-poppins rounded-md"
         >
-          Resume
+          <a
+            href="https://docs.google.com/document/d/1xsZPS6DaaYLctuXM9-Gph73Iv8v7_Cdb/edit?usp=sharing&ouid=102071174469387905389&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
         </button>
       </section>
       <section className="md:w-2/5 max-w-[30rem] mx-auto">
