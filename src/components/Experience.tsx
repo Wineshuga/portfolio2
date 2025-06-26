@@ -2,8 +2,8 @@ import data from "../data/experience.json";
 
 const Experience = () => {
   return (
-    <section className="text-white">
-      <h3 className="md:text-4xl text-2xl my-10 text-center font-semibold">
+    <section className="text-[#E9E6E1]">
+      <h3 className="md:text-4xl text-2xl my-10 text-center font-semibold font-mono">
         Experience
       </h3>
       {data.map(
@@ -21,22 +21,26 @@ const Experience = () => {
             key={index}
             className="flex md:flex-row flex-col justify-between items-start my-8 md:w-10/12 mx-auto md:gap-20"
           >
-            <div className="w-1/12">
+            <div className="md:w-1/12">
               <p className="text-sm text-nowrap mb-3 md:mb-0">
                 {experience.date}
               </p>
             </div>
-            <article className="w-11/12">
-              <h3 className="text-2xl font-semibold mb-3">
+            <article className="md:w-11/12">
+              <h3 className="text-2xl font-semibold mb-3 font-mono">
                 {experience.position} -{" "}
-                <span className="text-purple-300">{experience.company}</span>
+                <span className="text-[#c0a290] font-nunito">
+                  {experience.company}
+                </span>
               </h3>
-              <p className="mb-3">{experience.description}</p>
+              <p className="mb-3 sm:text-base text-sm">
+                {experience.description}
+              </p>
               <ul className="flex gap-3 items-start flex-wrap">
                 {experience.skills.map((skill, index) => (
                   <li
                     key={index}
-                    className="text-xs text-purple-700 bg-gray-900 p-2 rounded-md"
+                    className="text-xs text-[#e1d3b6] bg-gray-900 p-2 rounded-md font-poppins cursor-default hover:bg-gray-800 transition-all duration-300"
                   >
                     {skill}
                   </li>

@@ -69,8 +69,8 @@ const devPractices = [
 
 const Skills = () => {
   return (
-    <section className="text-white py-10 my-10">
-      <h3 className="md:text-4xl text-2xl text-center font-semibold">
+    <section className="text-[#E9E6E1] py-10 my-10">
+      <h3 className="md:text-4xl text-2xl text-center font-semibold font-mono">
         Skills & Tools
       </h3>
       <section className="flex flex-col flex-wrap gap-5 md:flex-row items-center my-20 justify-center">
