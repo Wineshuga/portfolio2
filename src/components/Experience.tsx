@@ -3,7 +3,14 @@ import data from "../data/experience.json";
 const Experience = () => {
   return (
     <section className="text-[#E9E6E1]">
-      <h3 className="md:text-4xl text-2xl my-10 text-center font-semibold font-mono">
+      <h3
+        className="md:text-4xl text-2xl my-10 text-center font-semibold font-mono"
+        data-aos="fade-down"
+        data-aos-offset="100"
+        data-aos-delay="100"
+        data-aos-duration="2500"
+        data-aos-easing="ease"
+      >
         Experience
       </h3>
       {data.map(
@@ -21,12 +28,28 @@ const Experience = () => {
             key={index}
             className="flex md:flex-row flex-col justify-between items-start my-8 md:w-10/12 mx-auto md:gap-20"
           >
-            <div className="md:w-1/12">
+            <div
+              className="md:w-1/12"
+              data-aos="fade-right"
+              data-aos-offset="100"
+              data-aos-delay="100"
+              data-aos-duration="2500"
+              data-aos-easing="ease"
+              data-aos-once="true"
+            >
               <p className="text-sm text-nowrap mb-3 md:mb-0">
                 {experience.date}
               </p>
             </div>
-            <article className="md:w-11/12">
+            <article
+              className="md:w-11/12"
+              data-aos="fade-left"
+              data-aos-offset="100"
+              data-aos-delay="100"
+              data-aos-duration="2500"
+              data-aos-easing="ease"
+              data-aos-once="true"
+            >
               <h3 className="text-2xl font-semibold mb-3 font-mono">
                 {experience.position} -{" "}
                 <span className="text-[#c0a290] font-nunito">

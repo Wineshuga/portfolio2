@@ -69,7 +69,14 @@ const devPractices = [
 
 const Skills = () => {
   return (
-    <section className="text-[#E9E6E1] py-10 my-10">
+    <section
+      className="text-[#E9E6E1] py-10 my-10"
+      data-aos="fade-up"
+      data-aos-offset="100"
+      data-aos-delay="300"
+      data-aos-duration="2500"
+      data-aos-easing="ease"
+    >
       <h3 className="md:text-4xl text-2xl text-center font-semibold font-mono">
         Skills & Tools
       </h3>
@@ -78,13 +85,25 @@ const Skills = () => {
           <div
             key={index}
             className="p-4 max-w-80 border-2 rounded-lg text-center"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="2000"
+            data-aos-easing="ease"
           >
             <h4 className="text-xl font-semibold mt-6">{practice.title}</h4>
             <p className="text-gray-400">{practice.description}</p>
           </div>
         ))}
       </section>
-      <section className="flex flex-wrap gap-4 justify-center max-w-[600px] mx-auto my-20">
+      <section
+        className="flex flex-wrap gap-4 justify-center max-w-[600px] mx-auto my-20"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="300"
+        data-aos-duration="2500"
+        data-aos-easing="ease"
+      >
         {skillData.map((skill, index) => {
           const IconComponent = iconMap[skill.icon];
           const icon: ReactNode = IconComponent ? (
