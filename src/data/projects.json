@@ -1,0 +1,47 @@
+[
+  {
+    "image": "/images/status-tracker.png",
+    "title": "Status Tracker",
+    "description": "Status Tracker challenged me to quickly debug a persistent 500 error in an unfamiliar codebase. I traced the issue to outdated dependencies and improved error handling, learning GraphQL, Prisma, and Next.js on the fly. The project sharpened my backend skills and taught me the value of robust debugging and clear communication.",
+    "technologies": [
+      "Next.js",
+      "GraphQL",
+      "Prisma",
+      "Material UI",
+      "Tawk.io",
+      "Twilio",
+      "Beam Analytics",
+      "Stripe"
+    ],
+    "link": "https://statustracker.app/",
+    "github": ""
+  },
+  {
+    "image": "/images/guava.png",
+    "title": "GuavaFi Website",
+    "description": "GuavaFi needed a fast, engaging website to showcase their product. I built from a figma design, a user-friendly interface, then adapted quickly when the timeline was cut short. This project taught me to prioritize features, streamline my workflow, and deliver quality under pressure while keeping user experience central.",
+    "technologies": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "AOS"
+    ],
+    "link": "https://guava.finance/",
+    "github": ""
+  },
+  {
+    "image": "/images/foodbank.png",
+    "title": "FoodBank Admin Portal",
+    "description": "I built an admin dashboard for FoodBank where admins manage food loans, distributions, user roles, and finances. This project deepened my skills in role-based access, secure data handling, and user-friendly UI. I learned the importance of planning, real user testing, and used charts to help admins quickly understand distributions.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "REST API",
+      "Tailwind CSS",
+      "Chart.js",
+      "Git"
+    ],
+    "link": "",
+    "github": ""
+  }
+]
