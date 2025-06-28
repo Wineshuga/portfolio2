@@ -3,7 +3,14 @@ import data from "../data/projects.json";
 const Projects = () => {
   return (
     <section className="text-[#E9E6E1] py-10 my-10">
-      <h3 className="md:text-4xl text-2xl my-10 text-center font-semibold font-mono">
+      <h3
+        className="md:text-4xl text-2xl my-10 text-center font-semibold font-mono"
+        data-aos="fade-down"
+        data-aos-offset="100"
+        data-aos-delay="100"
+        data-aos-duration="2500"
+        data-aos-easing="ease"
+      >
         Projects
       </h3>
       {data.map((project, index) => (
@@ -11,10 +18,26 @@ const Projects = () => {
           key={index}
           className="flex md:flex-row flex-col justify-between items-start my-8 md:w-10/12 mx-auto md:gap-20"
         >
-          <div className="md:w-3/12 my-5 md:my-0 max-w-[20rem] sm:mx-0 mx-auto">
+          <div
+            className="md:w-3/12 my-5 md:my-0 max-w-[20rem] sm:mx-0 mx-auto"
+            data-aos="fade-right"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="2000"
+            data-aos-easing="ease"
+            data-aos-once="true"
+          >
             <img src={project.image} alt={project.title} />
           </div>
-          <article className="md:w-9/12">
+          <article
+            className="md:w-9/12"
+            data-aos="fade-left"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-duration="2000"
+            data-aos-easing="ease"
+            data-aos-once="true"
+          >
             <h3 className="text-2xl font-semibold mb-3 font-mono">
               {project.title}
             </h3>

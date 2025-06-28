@@ -3,7 +3,14 @@ import { IoMdMail } from "react-icons/io";
 
 const Contact = () => {
   return (
-    <section className="text-[#E9E6E1] py-10 my-10">
+    <section
+      className="text-[#E9E6E1] py-10 my-10"
+      data-aos="fade-up"
+      data-aos-offset="100"
+      data-aos-delay="100"
+      data-aos-duration="2500"
+      data-aos-easing="ease"
+    >
       <h3 className="md:text-4xl text-2xl text-center font-semibold font-mono">
         Contact
       </h3>
