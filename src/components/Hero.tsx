@@ -1,4 +1,4 @@
-import Winnie from "/images/winnie.jpg";
+import Winnie from "/images/winnie.webp";
 
 const Hero = () => {
   return (
@@ -73,7 +73,7 @@ const Hero = () => {
           data-aos-easing="ease"
           data-aos-once="true"
         >
-          <img src={Winnie} alt="uzochukwu winnie" />
+          <img src={Winnie} loading="lazy" alt="uzochukwu winnie" />
         </figure>
       </section>
     </section>
