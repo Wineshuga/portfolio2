@@ -1,4 +1,5 @@
-import Winnie from "/images/winnie.jpg";
+import Winnie from "/images/winnie.webp";
+import Resume from "/documents/uzochukwu_winnie_resume.pdf";
 
 const Hero = () => {
   return (
@@ -27,7 +28,7 @@ const Hero = () => {
           data-aos-easing="ease"
           data-aos-once="true"
         >
-          Frontend Engineer
+          Software Developer
         </h2>
         <article
           className="text-sm sm:text-base"
@@ -39,25 +40,27 @@ const Hero = () => {
           data-aos-once="true"
         >
           <p>
-            I’m a frontend engineer passionate about building responsive,
-            accessible, and user-centered web applications. My experience spans
-            React, Next.js, TypeScript, and Tailwind — with growing skills in
-            full-stack development.
+            I’m a software developer focused on building accessible,
+            user-centered software. I build with frontend technologies like
+            React and TypeScript, and backend systems using Python and Ruby on
+            Rails.
           </p>
+          <br />
           <p>
-            I’m always curious about new technologies, open source
-            collaboration, and how great design meets clean code. Beyond
-            development, I love sharing what I learn and building products that
-            make a difference.
+            I’m always curious about new technologies, open-source
+            collaboration, and real-world problem-solving. Beyond development, I
+            enjoy sharing what I learn and building products that make a
+            difference.
           </p>
           <button
             type="button"
             className="p-2 border-2 border-gray-700 hover:border-gray-500 transition-all duration-500 my-3 font-poppins rounded-md"
           >
             <a
-              href="https://docs.google.com/document/d/1xsZPS6DaaYLctuXM9-Gph73Iv8v7_Cdb/edit?usp=sharing&ouid=102071174469387905389&rtpof=true&sd=true"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={Resume}
+              download
+              className="cursor-pointer"
+              title="Download Resume"
             >
               Resume
             </a>
@@ -73,7 +76,7 @@ const Hero = () => {
           data-aos-easing="ease"
           data-aos-once="true"
         >
-          <img src={Winnie} alt="uzochukwu winnie" />
+          <img src={Winnie} loading="lazy" alt="uzochukwu winnie" />
         </figure>
       </section>
     </section>

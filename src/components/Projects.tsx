@@ -27,7 +27,7 @@ const Projects = () => {
             data-aos-easing="ease"
             data-aos-once="true"
           >
-            <img src={project.image} alt={project.title} />
+            <img src={project.image} loading="lazy" alt={project.title} />
           </div>
           <article
             className="md:w-9/12"
