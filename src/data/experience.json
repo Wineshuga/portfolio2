@@ -1,26 +1,12 @@
 [
   {
-    "company": "Sovereign Technology and Innovations LTD",
-    "position": "Frontend Engineer",
-    "date": "2024 - present",
-    "description": "At Sovereign Tech, I design and build web apps to support business growth. I work with teams to turn designs into responsive, accessible products, focusing on performance and user experience. I led feature development that improved productivity and aligned user needs with business goals.",
-    "skills": [
-      "React",
-      "JavaScript",
-      "TypeScript",
-      "HTML",
-      "CSS",
-      "Git",
-      "Tailwind CSS",
-      "Redux"
-    ]
-  },
-  {
     "company": "Freelance",
-    "position": "Full Stack Developer",
+    "position": "Software Developer",
     "date": "2023 - Present",
-    "description": "Developed fullstack apps, contributed to open-source, completed a remote engineering program, and collaborated globally on real-world projects. Led sprints, assigned tasks, and resolved blockers through teamwork.",
+    "description": "Developed full-stack apps, contributed to open-source, completed a remote engineering program, and collaborated globally on real-world projects. Led sprints, assigned tasks, and resolved blockers through teamwork.",
     "skills": [
+      "Python",
+      "FastAPI",
       "React",
       "JavaScript",
       "Git",
@@ -31,6 +17,22 @@
       "GitHub",
       "Redux",
       "Ruby on Rails"
+    ]
+  },
+  {
+    "company": "Sovereign Technology and Innovations LTD",
+    "position": "Frontend Engineer",
+    "date": "2024 - 2025",
+    "description": "At Sovereign Tech, I design and build web apps to support business growth. I work with teams to turn designs into responsive, accessible products, focusing on performance and user experience. I led feature development that improved productivity and aligned user needs with business goals.",
+    "skills": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Git",
+      "Tailwind CSS",
+      "Redux"
     ]
   },
   {
