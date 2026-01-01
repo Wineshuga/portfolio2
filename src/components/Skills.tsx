@@ -7,7 +7,9 @@ import {
   FaGitAlt,
   FaGithub,
   FaNpm,
+  FaPython,
 } from "react-icons/fa";
+import { DiRuby } from "react-icons/di";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
 import {
   SiTypescript,
@@ -16,6 +18,9 @@ import {
   SiMui,
   SiRedux,
   SiRubyonrails,
+  SiFastapi,
+  SiPostgresql,
+  SiPostman,
 } from "react-icons/si";
 import type { ReactNode } from "react";
 
@@ -38,6 +43,11 @@ const iconMap: Record<
   SiMui,
   SiRedux,
   SiRubyonrails,
+  FaPython,
+  DiRuby,
+  SiFastapi,
+  SiPostgresql,
+  SiPostman,
 };
 
 const devPractices = [
@@ -60,6 +70,10 @@ const devPractices = [
   {
     title: "Agile Methodology",
     description: "Following Agile practices for iterative development.",
+  },
+  {
+    title: "API Development",
+    description: "Building RESTful and GraphQL APIs.",
   },
   {
     title: "API Integration",
