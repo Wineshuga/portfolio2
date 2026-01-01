@@ -1,13 +1,13 @@
 [
   {
-    "name": "HTML",
-    "icon": "FaHtml5",
-    "color": "#E34F26"
+    "name": "Python",
+    "icon": "FaPython",
+    "color": "#4B8BBE"
   },
   {
-    "name": "CSS",
-    "icon": "FaCss3Alt",
-    "color": "#1572B6"
+    "name": "Ruby",
+    "icon": "DiRuby",
+    "color": "#820C02"
   },
   {
     "name": "JavaScript",
@@ -15,14 +15,43 @@
     "color": "#F7DF1E"
   },
   {
+    "name": "TypeScript",
+    "icon": "SiTypescript",
+    "color": "#3178C6"
+  },
+  {
     "name": "React.js",
     "icon": "FaReact",
     "color": "#61DAFB"
   },
   {
-    "name": "TypeScript",
-    "icon": "SiTypescript",
-    "color": "#3178C6"
+    "name": "RubyonRails",
+    "icon": "SiRubyonrails",
+    "color": "#CC0000"
+  },
+  {
+    "name": "FastAPI",
+    "icon": "SiFastapi",
+    "color": "#009688"
+  },
+  {
+    "name": "Redux",
+    "icon": "SiRedux",
+    "color": "#764ABC"
+  },
+  {
+    "name": "Firebase",
+    "icon": "IoLogoFirebase",
+    "color": "#FFCA28"
+  },
+  {
+    "name": "Next.js",
+    "icon": "SiNextdotjs"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "SiPostgresql",
+    "color": "#336791"
   },
   {
     "name": "Tailwind",
@@ -35,18 +64,14 @@
     "color": "#007FFF"
   },
   {
+    "name": "Postman",
+    "icon": "SiPostman",
+    "color": "#FF6C37"
+  },
+  {
     "name": "Git",
     "icon": "FaGitAlt",
     "color": "#F05032"
-  },
-  {
-    "name": "Firebase",
-    "icon": "IoLogoFirebase",
-    "color": "#FFCA28"
-  },
-  {
-    "name": "Next.js",
-    "icon": "SiNextdotjs"
   },
   {
     "name": "GitHub",
@@ -58,13 +83,13 @@
     "color": "#CB3837"
   },
   {
-    "name": "Redux",
-    "icon": "SiRedux",
-    "color": "#764ABC"
+    "name": "HTML",
+    "icon": "FaHtml5",
+    "color": "#E34F26"
   },
   {
-    "name": "Rails",
-    "icon": "SiRubyonrails",
-    "color": "#CC0000"
+    "name": "CSS",
+    "icon": "FaCss3Alt",
+    "color": "#1572B6"
   }
 ]
