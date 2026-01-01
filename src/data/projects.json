@@ -1,5 +1,21 @@
 [
   {
+    "image": "/images/scale-trip.png",
+    "title": "Scale Trip",
+    "description": "ScaleTrip pushed me deeper into backend development by designing and building with Python and FastAPI, a RESTful API with full authentication from scratch. I modeled relational data with PostgreSQL and implemented core CRUD operations. The project strengthened my understanding of API design, data modeling, and writing maintainable backend code.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "JWT Authentication",
+      "RESTful APIs",
+      "Swagger / OpenAPI"
+    ],
+    "link": "",
+    "github": "https://github.com/Wineshuga/scale-trip"
+  },
+  {
     "image": "/images/status-tracker.png",
     "title": "Status Tracker",
     "description": "Status Tracker challenged me to quickly debug a persistent 500 error in an unfamiliar codebase. I traced the issue to outdated dependencies and improved error handling, learning GraphQL, Prisma, and Next.js on the fly. The project sharpened my backend skills and taught me the value of robust debugging and clear communication.",
@@ -36,7 +52,7 @@
     "technologies": [
       "React",
       "TypeScript",
-      "REST API",
+      "RESTful APIs",
       "Tailwind CSS",
       "Chart.js",
       "Git"
