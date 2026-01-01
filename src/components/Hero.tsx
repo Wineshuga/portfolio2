@@ -27,7 +27,7 @@ const Hero = () => {
           data-aos-easing="ease"
           data-aos-once="true"
         >
-          Frontend Engineer
+          Software Developer
         </h2>
         <article
           className="text-sm sm:text-base"
@@ -39,16 +39,17 @@ const Hero = () => {
           data-aos-once="true"
         >
           <p>
-            I’m a frontend engineer passionate about building responsive,
-            accessible, and user-centered web applications. My experience spans
-            React, Next.js, TypeScript, and Tailwind — with growing skills in
-            full-stack development.
+            I’m a software developer focused on building accessible,
+            user-centered software. I build with frontend technologies like
+            React and TypeScript, and backend systems using Python and Ruby on
+            Rails.
           </p>
+          <br />
           <p>
-            I’m always curious about new technologies, open source
-            collaboration, and how great design meets clean code. Beyond
-            development, I love sharing what I learn and building products that
-            make a difference.
+            I’m always curious about new technologies, open-source
+            collaboration, and real-world problem-solving. Beyond development, I
+            enjoy sharing what I learn and building products that make a
+            difference.
           </p>
           <button
             type="button"
