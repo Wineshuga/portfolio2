@@ -36,16 +36,10 @@ export const usePageTitle = (title: string, excerpt?: string, slug?: string) => 
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", excerpt);
     if (slug) {
-      setMeta(
-        "property",
-        "og:url",
-        `https://uzochukwuwinnie.netlify.app/blog/${slug}`
-      );
       const url = `https://uzochukwuwinnie.netlify.app/blog/${slug}`;
       setMeta("property", "og:url", url);
       setLink("canonical", url);
     }
-
     return () => {
       document.title = previousTitle;
     };
