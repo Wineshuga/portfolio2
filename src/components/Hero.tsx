@@ -1,5 +1,4 @@
 import Winnie from "/images/winnie.webp";
-import Resume from "/documents/uzochukwu_winnie_resume.pdf";
 
 const Hero = () => {
   return (
@@ -57,10 +56,11 @@ const Hero = () => {
             className="p-2 border-2 border-gray-700 hover:border-gray-500 transition-all duration-500 my-3 font-poppins rounded-md"
           >
             <a
-              href={Resume}
-              download
+              href="https://docs.google.com/document/d/1xsZPS6DaaYLctuXM9-Gph73Iv8v7_Cdb/edit?usp=sharing&ouid=102071174469387905389&rtpof=true&sd=true"
               className="cursor-pointer"
-              title="Download Resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Resume"
             >
               Resume
             </a>
