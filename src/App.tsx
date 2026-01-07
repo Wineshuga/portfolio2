@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Editor from "./pages/admin/Editor";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
+import { ProtectedRoute } from "./hooks/ProtectedRoute";
 
 function App() {
   useEffect(() => {
@@ -16,7 +17,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Editor />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <Editor />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
