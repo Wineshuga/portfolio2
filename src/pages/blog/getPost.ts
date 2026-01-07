@@ -1,7 +1,7 @@
 import { collection, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { db } from "../../firebase";
 
-interface PostType {
+export interface PostType {
   id: string;
   title: string;
   slug: string;

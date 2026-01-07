@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const slugify = (text: string) => {
@@ -57,6 +57,7 @@ export default function MarkdownEditor() {
   return (
     <section>
       <button onClick={handleLogout}>Sign out</button>
+      <Link to={"/admin/dashboard/posts"}>All posts</Link>
       <div
         className="min-h-screen flex items-start justify-center py-12 px-4 bg-gray-50"
         style={{ fontFamily: "var(--font-poppins)" }}

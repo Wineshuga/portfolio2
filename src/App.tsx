@@ -8,6 +8,7 @@ import Editor from "./pages/admin/Editor";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import { ProtectedRoute } from "./hooks/ProtectedRoute";
+import PostPage from "./pages/admin/PostPage";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Editor />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/dashboard/posts"
+          element={
+            <ProtectedRoute>
+              <PostPage />
             </ProtectedRoute>
           }
         />
