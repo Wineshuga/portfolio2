@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiMediumLogoLight } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -33,7 +34,10 @@ const Navbar = () => {
       <p className="font-baybin text-5xl cursor-default tracking-tight">UW</p>
 
       <nav>
-        <ul className="flex gap-4">
+        <ul className="flex items-center gap-4">
+          <li className="font-poppins">
+            <Link to="/blog">My Writings</Link>
+          </li>
           <li
             className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
             title="Github"
