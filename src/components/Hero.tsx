@@ -76,7 +76,7 @@ const Hero = () => {
           data-aos-easing="ease"
           data-aos-once="true"
         >
-          <img src={Winnie} loading="lazy" alt="uzochukwu winnie" />
+          <img src={Winnie} alt="uzochukwu winnie" />
         </figure>
       </section>
     </section>
