@@ -9,6 +9,7 @@ import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import { ProtectedRoute } from "./hooks/ProtectedRoute";
 import PostPage from "./pages/admin/PostPage";
+import Trash from "./pages/admin/Trash";
 
 function App() {
   useEffect(() => {
@@ -27,10 +28,26 @@ function App() {
           }
         />
         <Route
-          path="/admin/dashboard/posts"
+          path="/admin/dashboard/published-posts"
           element={
             <ProtectedRoute>
               <PostPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/dashboard/archived-posts"
+          element={
+            <ProtectedRoute>
+              <PostPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/dashboard/trashed-posts"
+          element={
+            <ProtectedRoute>
+              <Trash />
             </ProtectedRoute>
           }
         />

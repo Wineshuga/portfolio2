@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 
 const slugify = (text: string) => {
@@ -21,7 +21,7 @@ export default function MarkdownEditor() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent, status: string) => {
     e.preventDefault();
     const slug = slugify(title);
     const payload = {
@@ -29,14 +29,22 @@ export default function MarkdownEditor() {
       slug,
       content,
       excerpt,
-      published: true,
+      published: status === "published" ? true : false,
+      status,
+      deleted: false,
+      publishedAt: status === "published" ? serverTimestamp() : null,
+      updatedAt: null,
       createdAt: serverTimestamp(),
     };
 
     try {
       setIsLoading(true);
       await addDoc(collection(db, "posts"), payload);
-      navigate("/blog");
+      navigate(
+        `/admin/dashboard/${
+          status === "published" ? "published-posts" : "archived-posts"
+        }`
+      );
     } catch (error) {
       console.error("Error publishing post:", error);
     } finally {
@@ -46,8 +54,7 @@ export default function MarkdownEditor() {
 
   const handleLogout = async () => {
     try {
-      const res = await signOut(auth);
-      console.log(res);
+      await signOut(auth);
       navigate("/admin/login");
     } catch (error) {
       console.error("Error signing out:", error);
@@ -57,7 +64,27 @@ export default function MarkdownEditor() {
   return (
     <section>
       <button onClick={handleLogout}>Sign out</button>
-      <Link to={"/admin/dashboard/posts"}>All posts</Link>
+      <button
+        onClick={() =>
+          navigate("/admin/dashboard/published-posts", {
+            state: { status: "published" },
+          })
+        }
+      >
+        All posts
+      </button>
+      <button
+        onClick={() =>
+          navigate("/admin/dashboard/archived-posts", {
+            state: { status: "draft" },
+          })
+        }
+      >
+        Archive
+      </button>
+      <button onClick={() => navigate("/admin/dashboard/trashed-posts")}>
+        Trash
+      </button>
       <div
         className="min-h-screen flex items-start justify-center py-12 px-4 bg-gray-50"
         style={{ fontFamily: "var(--font-poppins)" }}
@@ -68,7 +95,7 @@ export default function MarkdownEditor() {
               Create Article
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Title</label>
                 <input
@@ -119,9 +146,18 @@ export default function MarkdownEditor() {
               <button
                 type="submit"
                 disabled={isLoading}
+                onClick={(e) => handleSubmit(e, "published")}
                 className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
               >
                 {isLoading ? "Publishing..." : "Publish Article"}
+              </button>
+              <button
+                type="button"
+                disabled={isLoading}
+                onClick={(e) => handleSubmit(e, "draft")}
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+              >
+                Save to Draft
               </button>
             </form>
           </div>

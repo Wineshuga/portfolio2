@@ -18,7 +18,7 @@ const BlogList = () => {
   }
 
   useEffect(() => {
-    getPosts().then((data: PostType[]) => {
+    getPosts("published").then((data: PostType[]) => {
       setPosts(data);
       setLoading(false);
     });

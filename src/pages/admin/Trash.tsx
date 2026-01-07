@@ -1,47 +1,42 @@
 import { useEffect, useState } from "react";
 import { getPosts, type PostType } from "../blog/getPost";
-import { Link, useLocation } from "react-router-dom";
-import { doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { deleteDoc, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
-const PostPage = () => {
+const Trash = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  const status = location.state?.status || "published";
 
   useEffect(() => {
-    getPosts(status).then((data: PostType[]) => {
+    getPosts("trash").then((data: PostType[]) => {
       setPosts(data);
       setLoading(false);
     });
-  }, [status]);
+  }, []);
 
-  const toggleArchive = async (postId: string, status: string) => {
+  const handlePermanentDelete = async (postId: string) => {
+    try {
+      await deleteDoc(doc(db, "posts", postId));
+      getPosts("trash").then((data: PostType[]) => {
+        setPosts(data);
+      });
+    } catch (err) {
+      console.error("Delete failed:", err);
+    }
+  };
+
+  const handleMoveToArchive = async (postId: string) => {
     try {
       await updateDoc(doc(db, "posts", postId), {
-        status: status === "published" ? "draft" : "published",
+        status: "draft",
+        deleted: false,
         updatedAt: serverTimestamp(),
       });
     } catch (error) {
       console.error("Error archiving/unarchiving post:", error);
     } finally {
-      getPosts(status).then((data: PostType[]) => {
-        setPosts(data);
-      });
-    }
-  };
-
-  const moveToTrash = async (postId: string) => {
-    try {
-      await updateDoc(doc(db, "posts", postId), {
-        deleted: true,
-        updatedAt: serverTimestamp(),
-      });
-    } catch (error) {
-      console.error("Error moving post to trash:", error);
-    } finally {
-      getPosts(status).then((data: PostType[]) => {
+      getPosts("trash").then((data: PostType[]) => {
         setPosts(data);
       });
     }
@@ -51,11 +46,7 @@ const PostPage = () => {
 
   return (
     <div>
-      <h1>
-        {status === "published"
-          ? "Published Posts"
-          : "Drafted / Archived Posts"}
-      </h1>
+      <h1>Trashed Posts</h1>
 
       <div className="max-w-4xl mx-auto">
         <div className="space-y-6">
@@ -77,15 +68,17 @@ const PostPage = () => {
                 {post.createdAt.toDate().toLocaleDateString()}
               </p>
               <div>
-                <button type="button">Edit</button>
                 <button
                   type="button"
-                  onClick={() => toggleArchive(post.id, status)}
+                  onClick={() => handleMoveToArchive(post.id)}
                 >
-                  {status === "published" ? "Archive" : "Unarchive"}
+                  Move to Archive
                 </button>
-                <button type="button" onClick={() => moveToTrash(post.id)}>
-                  Move to Trash
+                <button
+                  type="button"
+                  onClick={() => handlePermanentDelete(post.id)}
+                >
+                  Delete
                 </button>
               </div>
             </article>
@@ -96,4 +89,4 @@ const PostPage = () => {
   );
 };
 
-export default PostPage;
+export default Trash;
