@@ -13,15 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      localStorage.setItem(
-        "isAuth",
-        JSON.stringify({ user: userCredential.user })
-      );
+      await signInWithEmailAndPassword(auth, email, password);
       navigate("/admin/dashboard");
     } catch (error) {
       console.error("Error during sign-in:", error);
