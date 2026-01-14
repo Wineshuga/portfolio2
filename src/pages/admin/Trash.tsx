@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import { getPosts, type PostType } from "../blog/getPost";
-import { Link } from "react-router-dom";
+import { getPosts } from "../blog/getPost";
 import { deleteDoc, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import type { PostType } from "../../types";
+import LoadingIcon from "../../components/micro/LoadingIcon";
+import PostCard from "../../components/micro/PostCard";
 
 const Trash = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getPosts("trash").then((data: PostType[]) => {
       setPosts(data);
       setLoading(false);
@@ -42,48 +45,33 @@ const Trash = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-
   return (
-    <div>
-      <h1>Trashed Posts</h1>
+    <div className="font-nunito">
+      <h1 className="text-center text-2xl md:text-4xl font-semibold">
+        Trashed Posts <span>({posts?.length})</span>
+      </h1>
 
       <div className="max-w-4xl mx-auto">
-        <div className="space-y-6">
-          {posts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
-            >
-              <h2 className="text-2xl font-semibold mb-2">
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="text-gray-600 mb-3">{post.excerpt}</p>
-              <p className="text-sm text-gray-500">
-                {post.createdAt.toDate().toLocaleDateString()}
-              </p>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => handleMoveToArchive(post.id)}
-                >
-                  Move to Archive
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handlePermanentDelete(post.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
+        {loading ? (
+          <section className="flex justify-center">
+            <LoadingIcon />
+          </section>
+        ) : (
+          <div className="space-y-6">
+            {posts.length === 0 ? (
+              <p className="text-center py-20">Nothing Here</p>
+            ) : (
+              posts.map((post, index) => (
+                <PostCard
+                  index={index}
+                  post={post}
+                  handleMoveToArchive={handleMoveToArchive}
+                  handlePermanentDelete={handlePermanentDelete}
+                />
+              ))
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

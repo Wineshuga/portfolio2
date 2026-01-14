@@ -1,30 +1,20 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "./getPost";
 import { Link } from "react-router-dom";
-import type { Timestamp } from "firebase/firestore";
+import type { PostType } from "../../types";
+import LoadingIcon from "../../components/micro/LoadingIcon";
 
 const BlogList = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  interface PostType {
-    id: string;
-    title: string;
-    slug: string;
-    excerpt: string;
-    content: string;
-    createdAt: Timestamp;
-    published: boolean;
-  }
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getPosts("published").then((data: PostType[]) => {
       setPosts(data);
       setLoading(false);
     });
   }, []);
-
-  if (loading) return <p>Loading...</p>;
 
   return (
     <div
@@ -33,8 +23,13 @@ const BlogList = () => {
     >
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 font-mono">Blog</h1>
-
         <div className="space-y-6">
+          {loading ? (
+            <section className="flex justify-center">
+              <LoadingIcon />
+            </section>
+          ) : null}
+
           {posts.map((post) => (
             <article
               key={post.id}

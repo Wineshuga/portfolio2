@@ -28,7 +28,7 @@ const Links = ({
         showMenu ? "block md:hidden w-full md:w-fit text-center" : "hidden"
       } md:flex justify-between text-white`}
     >
-      <li className="text-right">
+      <li className="text-right md:hidden">
         <button type="button" onClick={() => setShowMenu(false)}>
           <TfiClose className="w-5 h-5" />
         </button>
@@ -99,8 +99,14 @@ const Links = ({
 const AdminNavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <nav className="flex justify-between p-6 bg-black text-white font-poppins fixed w-full">
-      <p className={`${showMenu ? "hidden" : "block"} font-nunito`}>ADMIN</p>
+    <nav className="flex items-center justify-between p-6 bg-black text-white font-poppins fixed w-full">
+      <p
+        className={`${
+          showMenu ? "hidden" : "block"
+        } font-nunito md:text-2xl text-lg font-bold`}
+      >
+        ADMIN
+      </p>
       <button
         onClick={() => setShowMenu((prev) => !prev)}
         className={showMenu ? "hidden" : "block md:hidden"}

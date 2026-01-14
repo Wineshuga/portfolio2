@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <section>
       <AdminNavBar />
-      <main className="pt-20">
+      <main className="pt-24 md:pt-30">
         <Outlet />
       </main>
     </section>

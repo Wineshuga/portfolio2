@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
-import { getPosts, type PostType } from "../blog/getPost";
-import { Link, useLocation } from "react-router-dom";
+import { getPosts } from "../blog/getPost";
+import { useLocation } from "react-router-dom";
 import { doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import LoadingIcon from "../../components/micro/LoadingIcon";
+import PostCard from "../../components/micro/PostCard";
+import type { PostStatus, PostType } from "../../types";
 
 const PostPage = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const location = useLocation();
   const status = location.state?.status || "published";
 
   useEffect(() => {
+    setLoading(true);
     getPosts(status).then((data: PostType[]) => {
       setPosts(data);
       setLoading(false);
     });
   }, [status]);
 
-  const toggleArchive = async (postId: string, status: string) => {
+  const toggleArchive = async (postId: string, status: PostStatus) => {
     try {
       await updateDoc(doc(db, "posts", postId), {
         status: status === "published" ? "draft" : "published",
@@ -47,50 +51,36 @@ const PostPage = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-
   return (
-    <div>
-      <h1>
+    <div className="font-nunito">
+      <h1 className="text-center text-2xl md:text-4xl font-semibold">
         {status === "published"
           ? "Published Posts"
-          : "Drafted / Archived Posts"}
+          : "Drafted / Archived Posts"}{" "}
+        <span>({posts?.length})</span>
       </h1>
-
       <div className="max-w-4xl mx-auto">
-        <div className="space-y-6">
-          {posts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
-            >
-              <h2 className="text-2xl font-semibold mb-2">
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="text-gray-600 mb-3">{post.excerpt}</p>
-              <p className="text-sm text-gray-500">
-                {post.createdAt.toDate().toLocaleDateString()}
-              </p>
-              <div>
-                <button type="button">Edit</button>
-                <button
-                  type="button"
-                  onClick={() => toggleArchive(post.id, status)}
-                >
-                  {status === "published" ? "Archive" : "Unarchive"}
-                </button>
-                <button type="button" onClick={() => moveToTrash(post.id)}>
-                  Move to Trash
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
+        {loading ? (
+          <section className="flex justify-center">
+            <LoadingIcon />
+          </section>
+        ) : (
+          <div className="space-y-6">
+            {posts.length === 0 ? (
+              <p className="text-center py-20">Nothing Here</p>
+            ) : (
+              posts.map((post, index) => (
+                <PostCard
+                  key={post.id}
+                  index={index}
+                  post={post}
+                  moveToTrash={moveToTrash}
+                  toggleArchive={toggleArchive}
+                />
+              ))
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

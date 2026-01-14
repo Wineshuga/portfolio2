@@ -1,19 +1,6 @@
-import { collection, getDocs, query, Timestamp, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
-
-export interface PostType {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  createdAt: Timestamp;
-  published: boolean;
-  status: string;
-  deleted: boolean;
-  publishedAt: Timestamp;
-  updatedAt: Timestamp;
-}
+import type { PostType } from "../../types";
 
 export const getPosts = async (status: string): Promise<PostType[]> => {
   const q = query(
