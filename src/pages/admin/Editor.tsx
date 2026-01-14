@@ -2,9 +2,8 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { auth, db } from "../../firebase";
+import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
 
 const slugify = (text: string) => {
   return text
@@ -41,7 +40,7 @@ export default function MarkdownEditor() {
       setIsLoading(true);
       await addDoc(collection(db, "posts"), payload);
       navigate(
-        `/admin/dashboard/${
+        `/admin/${
           status === "published" ? "published-posts" : "archived-posts"
         }`
       );
@@ -52,39 +51,8 @@ export default function MarkdownEditor() {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate("/admin/login");
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
-  };
-
   return (
     <section>
-      <button onClick={handleLogout}>Sign out</button>
-      <button
-        onClick={() =>
-          navigate("/admin/dashboard/published-posts", {
-            state: { status: "published" },
-          })
-        }
-      >
-        All posts
-      </button>
-      <button
-        onClick={() =>
-          navigate("/admin/dashboard/archived-posts", {
-            state: { status: "draft" },
-          })
-        }
-      >
-        Archive
-      </button>
-      <button onClick={() => navigate("/admin/dashboard/trashed-posts")}>
-        Trash
-      </button>
       <div
         className="min-h-screen flex items-start justify-center py-12 px-4 bg-gray-50"
         style={{ fontFamily: "var(--font-poppins)" }}

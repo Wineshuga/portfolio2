@@ -1,59 +1,38 @@
-import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/admin/Login";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Home from "./pages/Home";
-import Editor from "./pages/admin/Editor";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
-import { ProtectedRoute } from "./hooks/ProtectedRoute";
+import Login from "./pages/admin/Login";
+import Editor from "./pages/admin/Editor";
 import PostPage from "./pages/admin/PostPage";
 import Trash from "./pages/admin/Trash";
+import AdminLayout from "./pages/admin/Index";
+import { ProtectedRoute } from "./hooks/ProtectedRoute";
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-  });
   return (
     <Router>
       <Routes>
-        <Route path="/admin/login" element={<Login />} />
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoute>
-              <Editor />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/dashboard/published-posts"
-          element={
-            <ProtectedRoute>
-              <PostPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/dashboard/archived-posts"
-          element={
-            <ProtectedRoute>
-              <PostPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/dashboard/trashed-posts"
-          element={
-            <ProtectedRoute>
-              <Trash />
-            </ProtectedRoute>
-          }
-        />
+        {/* Public routes */}
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/admin/login" element={<Login />} />
+
+        {/* Admin routes */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Editor />} />
+          <Route path="published-posts" element={<PostPage />} />
+          <Route path="archived-posts" element={<PostPage />} />
+          <Route path="trashed-posts" element={<Trash />} />
+        </Route>
       </Routes>
     </Router>
   );
