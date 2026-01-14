@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex text-[#E9E6E1] flex-col md:flex-row items-end justify-between md:gap-10 lg:gap-5 gap-5 my-20 sm:px-5 mx-auto w-fit"
+      className="flex text-[#E9E6E1] flex-col md:flex-row md:items-start items-end justify-between md:gap-10 lg:gap-5 gap-5 mb-20 mt-40 sm:px-5 mx-auto w-fit"
     >
       <section className="md:w-1/2">
         <h1
