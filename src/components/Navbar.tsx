@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header
-      className={`fixed w-full flex justify-between items-center p-4 bg-[#000000bf] text-white z-50`}
+      className={`fixed w-full flex justify-between items-center p-4 bg-[#000000bf] text-white z-50 border-b border-gray-800 `}
     >
       <p className="font-baybin text-5xl cursor-default tracking-tight">
         <Link to="/">UW</Link>
@@ -16,7 +16,7 @@ const Navbar = () => {
           <li className="font-poppins text-lg">
             <Link to="/blog">My Writings</Link>
           </li>
-          <span className="sm:block hidden">
+          <span className="sm:flex gap-3 hidden ">
             <li
               className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
               title="Github"
