@@ -98,7 +98,7 @@ const Skills = () => {
         {devPractices.map((practice, index) => (
           <div
             key={index}
-            className="p-4 max-w-80 border-2 rounded-lg text-center"
+            className="p-4 max-w-80 border-2 rounded-lg text-center min-h-40"
             data-aos="fade-up"
             data-aos-offset="100"
             data-aos-delay="100"
