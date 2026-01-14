@@ -70,7 +70,7 @@ export default function MarkdownEditor() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Article title"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none"
+                  className="w-full text-sm p-2 border border-[#ddd] focus:outline-none"
                 />
               </div>
               <div>
@@ -79,54 +79,45 @@ export default function MarkdownEditor() {
                 </label>
                 <input
                   type="text"
+                  className="border border-[#ddd]  w-full text-sm p-2"
                   placeholder="Short summary for SEO (140–160 chars)"
+                  max={160}
                   value={excerpt}
                   onChange={(e) => setExcerpt(e.target.value)}
                 />
               </div>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
-                }}
-              >
+              <div>
                 <textarea
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  style={{ height: "80vh", padding: "1rem" }}
+                  className="p-4 h-[80vh] border border-[#ddd] w-full"
                 />
-
-                <div
-                  style={{
-                    padding: "1rem",
-                    height: "80vh",
-                    overflow: "auto",
-                    border: "1px solid #ddd",
-                  }}
-                >
+                <p className="m-4">Preview:</p>
+                <div className="p-4 h-[80vh] overflow-auto border border-[#ddd]">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {content}
                   </ReactMarkdown>
                 </div>
               </div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                onClick={(e) => handleSubmit(e, "published")}
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-              >
-                {isLoading ? "Publishing..." : "Publish Article"}
-              </button>
-              <button
-                type="button"
-                disabled={isLoading}
-                onClick={(e) => handleSubmit(e, "draft")}
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-              >
-                Save to Draft
-              </button>
+              <div className="flex justify-end gap-3">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  onClick={(e) => handleSubmit(e, "published")}
+                  className="px-6 py-2 border border-[#e1d3b6] text-sm rounded-md"
+                >
+                  {isLoading ? "Publishing..." : "Publish Article"}
+                </button>
+                <button
+                  type="button"
+                  disabled={isLoading}
+                  onClick={(e) => handleSubmit(e, "draft")}
+                  className="px-6 py-2 border border-[#e1d3b6] text-sm rounded-md "
+                >
+                  Save to Draft
+                </button>
+              </div>
             </form>
           </div>
         </div>
