@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../blog/getPost";
+import { getPosts } from "../public/blog/getPost";
 import { deleteDoc, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import type { PostType } from "../../types";

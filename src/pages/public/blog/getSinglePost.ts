@@ -5,7 +5,7 @@ import {
   where,
   limit,
 } from "firebase/firestore"
-import { db } from "../../firebase"
+import { db } from "../../../firebase"
 
 export async function getPostBySlug(slug: string) {
   const q = query(

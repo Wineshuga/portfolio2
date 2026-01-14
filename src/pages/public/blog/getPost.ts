@@ -1,6 +1,6 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../firebase";
-import type { PostType } from "../../types";
+import { db } from "../../../firebase";
+import type { PostType } from "../../../types";
 
 export const getPosts = async (status: string): Promise<PostType[]> => {
   const q = query(

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "./getPost";
 import { Link } from "react-router-dom";
-import type { PostType } from "../../types";
-import LoadingIcon from "../../components/micro/LoadingIcon";
+import type { PostType } from "../../../types";
+import LoadingIcon from "../../../components/micro/LoadingIcon";
 
 const BlogList = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
@@ -17,10 +17,7 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div
-      className="min-h-screen py-12 px-4 bg-gray-50"
-      style={{ fontFamily: "var(--font-poppins)" }}
-    >
+    <section className="min-h-screen py-12 px-4 bg-gray-50 font-poppins">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 font-mono">Blog</h1>
         <div className="space-y-6">
@@ -51,7 +48,7 @@ const BlogList = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

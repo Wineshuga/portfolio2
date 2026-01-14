@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../blog/getPost";
+import { getPosts } from "../public/blog/getPost";
 import { useLocation } from "react-router-dom";
 import { doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";

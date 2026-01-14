@@ -1,5 +1,5 @@
-import skillData from "../data/skills.json";
-import SkillCard from "./micro/SkillCard";
+import skillData from "../../../data/skills.json";
+import SkillCard from "../../../components/micro/SkillCard";
 import {
   FaHtml5,
   FaCss3Alt,

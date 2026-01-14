@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug } from "./getSinglePost";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { usePageTitle } from "../../../hooks/usePageTitle";
 
 interface BlogPostType {
   id: string;
