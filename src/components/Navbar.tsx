@@ -1,37 +1,15 @@
-import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiMediumLogoLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const hero = document.getElementById("hero");
-      if (hero) {
-        const heroHeight = hero.offsetHeight;
-        if (window.scrollY > heroHeight / 2) {
-          setIsSticky(true);
-        } else {
-          setIsSticky(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <header
-      className={`flex justify-between items-center p-4 bg-black text-white transition-all duration-300 z-50 ${
-        isSticky
-          ? "fixed top-0 left-0 w-full shadow-lg border-b border-gray-700"
-          : "relative"
-      }`}
+      className={`fixed w-full flex justify-between items-center p-4 bg-[#000000a8] text-white z-50`}
     >
-      <p className="font-baybin text-5xl cursor-default tracking-tight">UW</p>
+      <p className="font-baybin text-5xl cursor-default tracking-tight">
+        <Link to="/">UW</Link>
+      </p>
 
       <nav>
         <ul className="flex items-center gap-4">
