@@ -34,14 +34,19 @@ const BlogList = () => {
                   {post.createdAt.toDate().toLocaleDateString()}
                 </p>
                 <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
-                  <Link to={`/articles/${post.slug}`} className="text-[#e1d3b6] ">
+                  <Link
+                    to={`/articles/${post.slug}`}
+                    className="text-[#e1d3b6] "
+                  >
                     {post.title}
                   </Link>
                 </h2>
               </article>
             ))
           ) : (
-            <p className="text-sm text-center py-20">I'm out of Ink 😁</p>
+            <p className="text-sm text-center py-20 text-[#ddd] font-semibold">
+              I'm out of Ink 😁
+            </p>
           )}
         </div>
       </div>

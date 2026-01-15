@@ -34,7 +34,7 @@ const BlogPost = () => {
           <LoadingIcon />
         </section>
       ) : post === null ? (
-        <p className="text-center mt-10 text-[#ddd]">
+        <p className="text-center mt-10 text-[#ddd] font-semibold">
           I'll have to check what happened 😬.
         </p>
       ) : (
