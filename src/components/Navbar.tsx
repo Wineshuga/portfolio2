@@ -1,75 +1,59 @@
-import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiMediumLogoLight } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const hero = document.getElementById("hero");
-      if (hero) {
-        const heroHeight = hero.offsetHeight;
-        if (window.scrollY > heroHeight / 2) {
-          setIsSticky(true);
-        } else {
-          setIsSticky(false);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <header
-      className={`flex justify-between items-center p-4 bg-black text-white transition-all duration-300 z-50 ${
-        isSticky
-          ? "fixed top-0 left-0 w-full shadow-lg border-b border-gray-700"
-          : "relative"
-      }`}
+      className={`fixed w-full flex justify-between items-center p-4 bg-[#000000bf] text-[#ddd] z-50 border-b border-gray-800 `}
     >
-      <p className="font-baybin text-5xl cursor-default tracking-tight">UW</p>
+      <p className="font-baybin text-5xl cursor-default tracking-tight">
+        <Link to="/">UW</Link>
+      </p>
 
       <nav>
-        <ul className="flex gap-4">
-          <li
-            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
-            title="Github"
-          >
-            <a
-              href="http://www.github.com/wineshuga"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="w-5 h-5" />
-            </a>
+        <ul className="flex items-center gap-4">
+          <li className="font-poppins text-lg">
+            <Link to="/articles">My Writings</Link>
           </li>
-          <li
-            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
-            title="Linkedin"
-          >
-            <a
-              href="http://www.linkedin.com/in/wineshuga"
-              target="_blank"
-              rel="noopener noreferrer"
+          <span className="sm:flex gap-3 hidden ">
+            <li
+              className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
+              title="Github"
             >
-              <FaLinkedin className="w-5 h-5" />
-            </a>
-          </li>
-          <li
-            className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
-            title="Medium"
-          >
-            <a
-              href="http://www.medium.com/@wineshuga"
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="http://www.github.com/wineshuga"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="w-5 h-5" />
+              </a>
+            </li>
+            <li
+              className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
+              title="Linkedin"
             >
-              <PiMediumLogoLight className="w-5 h-5" />
-            </a>
-          </li>
+              <a
+                href="http://www.linkedin.com/in/wineshuga"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+            </li>
+            <li
+              className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
+              title="Medium"
+            >
+              <a
+                href="http://www.medium.com/@wineshuga"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <PiMediumLogoLight className="w-5 h-5" />
+              </a>
+            </li>
+          </span>
         </ul>
       </nav>
     </header>

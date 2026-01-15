@@ -3,7 +3,7 @@ import { PiMediumLogoLight } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <section className="flex flex-col sm:flex-row items-center justify-between p-4 border-t border-gray-700">
+    <section className="flex flex-col bg-black sm:flex-row items-center justify-between p-4 py-10 border-t border-gray-700">
       <ul className="flex gap-4">
         <li
           className="cursor-pointer border-2 border-gray-400 p-1 rounded-md hover:scale-110 transition-all duration-300"
