@@ -1,30 +1,44 @@
-import { useEffect } from "react";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/public/home/Home";
+import Layout from "./pages/public/Index";
+import BlogList from "./pages/public/blog/BlogList";
+import BlogPost from "./pages/public/blog/BlogPost";
+import Login from "./pages/admin/Login";
+import Editor from "./pages/admin/Editor";
+import PostPage from "./pages/admin/PostPage";
+import Trash from "./pages/admin/Trash";
+import AdminLayout from "./pages/admin/Index";
+import { ProtectedRoute } from "./lib/ProtectedRoute";
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-  });
   return (
-    <>
-      <Navbar />
-      <main className="bg-black p-4 font-nunito">
-        <Hero />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
-      </main>
-    </>
+    <Router>
+      <Routes>
+        {/* Public routes */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/articles" element={<BlogList />} />
+          <Route path="/articles/:slug" element={<BlogPost />} />
+        </Route>
+        <Route path="/admin/login" element={<Login />} />
+
+        {/* Admin routes */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Editor />} />
+          <Route path="editor/:postId" element={<Editor />} />
+          <Route path="published-posts" element={<PostPage />} />
+          <Route path="archived-posts" element={<PostPage />} />
+          <Route path="trashed-posts" element={<Trash />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
