@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import type { PostType, PostStatus } from "../../types";
 
 type Props = {
@@ -23,14 +23,19 @@ const PostCard = ({
   handleMoveToArchive,
 }: Props) => {
   const { id } = post;
+  const navigate = useNavigate();
 
   return (
     <article className="bg-white rounded-lg shadow-md md:p-6 p-3 hover:shadow-lg transition">
       <span className="text-blue-600 font-bold">{index + 1}.</span>
       <h2 className="md:text-xl font-semibold mb-2">
-        <Link to={`/articles/${post.slug}`} className="">
-          {post.title}
-        </Link>
+        {post.status === "published" ? (
+          <Link to={`/articles/${post.slug}`} className="underline">
+            {post.title}
+          </Link>
+        ) : (
+          post.title
+        )}
       </h2>
 
       <p className="text-gray-600 text-sm mb-3 max-h-10 truncate">
@@ -74,6 +79,9 @@ const PostCard = ({
             <button
               type="button"
               className="p-2 rounded-lg text-sm min-w-20 cursor-pointer border border-[#e1d3b6]"
+              onClick={() =>
+                navigate(`/admin/editor/${post.id}`, { state: { postStatus } })
+              }
             >
               Edit
             </button>
@@ -85,7 +93,7 @@ const PostCard = ({
                 toggleArchive && postStatus && toggleArchive(id, postStatus)
               }
             >
-              {postStatus === "published" ? "Archive" : "Unarchive"}
+              {postStatus === "published" ? "Archive" : "Post"}
             </button>
 
             <button

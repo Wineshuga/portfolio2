@@ -32,6 +32,7 @@ function App() {
           }
         >
           <Route index element={<Editor />} />
+          <Route path="editor/:postId" element={<Editor />} />
           <Route path="published-posts" element={<PostPage />} />
           <Route path="archived-posts" element={<PostPage />} />
           <Route path="trashed-posts" element={<Trash />} />

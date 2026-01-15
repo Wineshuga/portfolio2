@@ -34,7 +34,9 @@ const BlogPost = () => {
           <LoadingIcon />
         </section>
       ) : post === null ? (
-        <p className="text-center mt-10">I'll have to check what happen 😬.</p>
+        <p className="text-center mt-10 text-[#ddd]">
+          I'll have to check what happened 😬.
+        </p>
       ) : (
         <>
           {post && (
