@@ -17,35 +17,32 @@ const BlogList = () => {
   }, []);
 
   return (
-    <section className="min-h-screen py-12 px-4 bg-gray-50 font-poppins">
+    <section className="min-h-screen py-12 px-4 pt-30 bg-black font-poppins">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-mono">Blog</h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-6 text-[#ddd] font-mono">
+          Articles
+        </h1>
         <div className="space-y-6">
           {loading ? (
             <section className="flex justify-center">
               <LoadingIcon />
             </section>
-          ) : null}
-
-          {posts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
-            >
-              <h2 className="text-2xl font-semibold mb-2">
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="text-gray-600 mb-3">{post.excerpt}</p>
-              <p className="text-sm text-gray-500">
-                {post.createdAt.toDate().toLocaleDateString()}
-              </p>
-            </article>
-          ))}
+          ) : posts.length > 0 ? (
+            posts.map((post) => (
+              <article key={post.id} className="">
+                <p className="text-sm text-gray-500">
+                  {post.createdAt.toDate().toLocaleDateString()}
+                </p>
+                <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
+                  <Link to={`/blog/${post.slug}`} className="text-[#e1d3b6] ">
+                    {post.title}
+                  </Link>
+                </h2>
+              </article>
+            ))
+          ) : (
+            <p className="text-sm text-center py-20">I'm out of Ink 😁</p>
+          )}
         </div>
       </div>
     </section>

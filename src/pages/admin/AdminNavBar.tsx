@@ -26,7 +26,7 @@ const Links = ({
     <ul
       className={`${
         showMenu ? "block md:hidden w-full md:w-fit text-center" : "hidden"
-      } md:flex justify-between text-white`}
+      } md:flex justify-between text-[#ddd]`}
     >
       <li className="text-right md:hidden">
         <button type="button" onClick={() => setShowMenu(false)}>
@@ -99,7 +99,7 @@ const Links = ({
 const AdminNavBar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <nav className="flex items-center justify-between p-6 bg-black text-white font-poppins fixed w-full">
+    <nav className="flex items-center justify-between p-6 bg-black text-[#ddd] font-poppins fixed w-full">
       <p
         className={`${
           showMenu ? "hidden" : "block"

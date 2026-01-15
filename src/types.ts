@@ -15,3 +15,13 @@ export type PostType = {
 }
 
 export type PostStatus = "draft" | "published" | "archived";
+
+export type BlogPostType = {
+  id: string;
+  title: string;
+  excerpt: string;
+  slug: string;
+  content: string;
+  createdAt: Timestamp
+}
+
