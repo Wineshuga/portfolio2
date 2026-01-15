@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug } from "./getSinglePost";
-import { usePageTitle } from "../../../hooks/usePageTitle";
+import { usePageTitle } from "../../../lib/usePageTitle";
 import LoadingIcon from "../../../components/micro/LoadingIcon";
 import type { BlogPostType } from "../../../types";
+import { MarkdownComponents } from "../../../lib/MarkDownEdit";
 
 const BlogPost = () => {
   const [post, setPost] = useState<BlogPostType | null>(null);
@@ -48,26 +49,7 @@ const BlogPost = () => {
                 </p>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
-                  components={{
-                    h1: ({ children }) => (
-                      <h1 className="text-3xl font-bold text-[#e1d3b6] my-4">
-                        {children}
-                      </h1>
-                    ),
-                    h2: ({ children }) => (
-                      <h2 className="text-2xl font-semibold text-[#e1d3b6] my-3">
-                        {children}
-                      </h2>
-                    ),
-                    p: ({ children }) => <p className="mb-4">{children}</p>,
-                    ul: ({ children }) => (
-                      <ul className="list-disc ml-6 mb-4">{children}</ul>
-                    ),
-                    ol: ({ children }) => (
-                      <ol className="list-decimal ml-6 mb-4">{children}</ol>
-                    ),
-                    li: ({ children }) => <li className="mb-1">{children}</li>,
-                  }}
+                  components={MarkdownComponents}
                 >
                   {post.content}
                 </ReactMarkdown>

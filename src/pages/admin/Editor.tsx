@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import { MarkdownComponents } from "../../lib/MarkDownEdit";
 
 const slugify = (text: string) => {
   return text
@@ -97,28 +98,7 @@ export default function MarkdownEditor() {
                 <div className="p-4 h-[80vh] overflow-auto border border-[#ddd]">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
-                    components={{
-                      h1: ({ children }) => (
-                        <h1 className="text-3xl font-bold text-[#e1d3b6] my-4">
-                          {children}
-                        </h1>
-                      ),
-                      h2: ({ children }) => (
-                        <h2 className="text-2xl font-semibold text-[#e1d3b6] my-3">
-                          {children}
-                        </h2>
-                      ),
-                      p: ({ children }) => <p className="mb-4">{children}</p>,
-                      ul: ({ children }) => (
-                        <ul className="list-disc ml-6 mb-4">{children}</ul>
-                      ),
-                      ol: ({ children }) => (
-                        <ol className="list-decimal ml-6 mb-4">{children}</ol>
-                      ),
-                      li: ({ children }) => (
-                        <li className="mb-1">{children}</li>
-                      ),
-                    }}
+                    components={MarkdownComponents}
                   >
                     {content}
                   </ReactMarkdown>
