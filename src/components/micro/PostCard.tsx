@@ -3,7 +3,7 @@ import type { PostType, PostStatus } from "../../types";
 
 type Props = {
   index: number;
-  trash?: boolean;
+  isTrash?: boolean;
   post: PostType;
   postStatus?: PostStatus;
   toggleArchive?: (postId: string, status: PostStatus) => void | Promise<void>;
@@ -14,7 +14,7 @@ type Props = {
 
 const PostCard = ({
   index,
-  trash,
+  isTrash,
   post,
   postStatus,
   toggleArchive,
@@ -48,10 +48,11 @@ const PostCard = ({
       </div>
 
       <div className="flex gap-2 items-end py-2">
-        {trash ? (
+        {isTrash ? (
           <>
             <button
               type="button"
+              className="p-2 rounded-lg text-sm min-w-20 cursor-pointer border border-[#e1d3b6]"
               onClick={() =>
                 handleMoveToArchive && handleMoveToArchive(post.id)
               }
@@ -60,6 +61,7 @@ const PostCard = ({
             </button>
             <button
               type="button"
+              className="p-2 rounded-lg text-sm min-w-20 cursor-pointer border border-[#e1d3b6]"
               onClick={() =>
                 handlePermanentDelete && handlePermanentDelete(post.id)
               }

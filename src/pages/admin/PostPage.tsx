@@ -23,6 +23,7 @@ const PostPage = () => {
 
   const toggleArchive = async (postId: string, status: PostStatus) => {
     try {
+      setLoading(true);
       await updateDoc(doc(db, "posts", postId), {
         status: status === "published" ? "draft" : "published",
         updatedAt: serverTimestamp(),
@@ -33,11 +34,13 @@ const PostPage = () => {
       getPosts(status).then((data: PostType[]) => {
         setPosts(data);
       });
+      setLoading(false);
     }
   };
 
   const moveToTrash = async (postId: string) => {
     try {
+      setLoading(true);
       await updateDoc(doc(db, "posts", postId), {
         deleted: true,
         updatedAt: serverTimestamp(),
@@ -48,6 +51,7 @@ const PostPage = () => {
       getPosts(status).then((data: PostType[]) => {
         setPosts(data);
       });
+      setLoading(false);
     }
   };
 
@@ -74,6 +78,7 @@ const PostPage = () => {
                   key={post.id}
                   index={index}
                   post={post}
+                  postStatus={status}
                   moveToTrash={moveToTrash}
                   toggleArchive={toggleArchive}
                 />

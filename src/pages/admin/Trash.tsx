@@ -20,17 +20,24 @@ const Trash = () => {
 
   const handlePermanentDelete = async (postId: string) => {
     try {
+      setLoading(true);
       await deleteDoc(doc(db, "posts", postId));
       getPosts("trash").then((data: PostType[]) => {
         setPosts(data);
       });
     } catch (err) {
       console.error("Delete failed:", err);
+    } finally {
+      getPosts("trash").then((data: PostType[]) => {
+        setPosts(data);
+      });
+      setLoading(false);
     }
   };
 
   const handleMoveToArchive = async (postId: string) => {
     try {
+      setLoading(true);
       await updateDoc(doc(db, "posts", postId), {
         status: "draft",
         deleted: false,
@@ -42,6 +49,7 @@ const Trash = () => {
       getPosts("trash").then((data: PostType[]) => {
         setPosts(data);
       });
+      setLoading(false);
     }
   };
 
@@ -65,6 +73,7 @@ const Trash = () => {
                 <PostCard
                   index={index}
                   post={post}
+                  isTrash={true}
                   handleMoveToArchive={handleMoveToArchive}
                   handlePermanentDelete={handlePermanentDelete}
                 />
