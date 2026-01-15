@@ -9,6 +9,7 @@ import PostPage from "./pages/admin/PostPage";
 import Trash from "./pages/admin/Trash";
 import AdminLayout from "./pages/admin/Index";
 import { ProtectedRoute } from "./lib/ProtectedRoute";
+import NotFound from "./pages/public/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/articles" element={<BlogList />} />
           <Route path="/articles/:slug" element={<BlogPost />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
         <Route path="/admin/login" element={<Login />} />
 
