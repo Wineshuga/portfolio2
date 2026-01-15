@@ -8,7 +8,7 @@ import Editor from "./pages/admin/Editor";
 import PostPage from "./pages/admin/PostPage";
 import Trash from "./pages/admin/Trash";
 import AdminLayout from "./pages/admin/Index";
-import { ProtectedRoute } from "./hooks/ProtectedRoute";
+import { ProtectedRoute } from "./lib/ProtectedRoute";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         {/* Public routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/articles" element={<BlogList />} />
+          <Route path="/articles/:slug" element={<BlogPost />} />
         </Route>
         <Route path="/admin/login" element={<Login />} />
 

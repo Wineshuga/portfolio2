@@ -14,7 +14,7 @@ const Navbar = () => {
       <nav>
         <ul className="flex items-center gap-4">
           <li className="font-poppins text-lg">
-            <Link to="/blog">My Writings</Link>
+            <Link to="/articles">My Writings</Link>
           </li>
           <span className="sm:flex gap-3 hidden ">
             <li

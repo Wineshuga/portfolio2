@@ -28,7 +28,7 @@ const PostCard = ({
     <article className="bg-white rounded-lg shadow-md md:p-6 p-3 hover:shadow-lg transition">
       <span className="text-blue-600 font-bold">{index + 1}.</span>
       <h2 className="md:text-xl font-semibold mb-2">
-        <Link to={`/blog/${post.slug}`} className="">
+        <Link to={`/articles/${post.slug}`} className="">
           {post.title}
         </Link>
       </h2>
