@@ -14,6 +14,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { MarkdownComponents } from "../../lib/MarkDownEdit";
 import type { PostType } from "../../types";
 import LoadingIcon from "../../components/micro/LoadingIcon";
+import ReadTime from "../../components/ReadTime";
 
 const slugify = (text: string) => {
   return text
@@ -72,7 +73,7 @@ export default function Editor() {
       navigate(
         `/admin/${
           status === "published" ? "published-posts" : "archived-posts"
-        }`
+        }`,
       );
     } catch (error) {
       console.error("Error publishing post:", error);
@@ -131,7 +132,7 @@ export default function Editor() {
                   onChange={(e) =>
                     post
                       ? setPost(
-                          (prev) => prev && { ...prev, title: e.target.value }
+                          (prev) => prev && { ...prev, title: e.target.value },
                         )
                       : setTitle(e.target.value)
                   }
@@ -152,7 +153,8 @@ export default function Editor() {
                   onChange={(e) =>
                     post
                       ? setPost(
-                          (prev) => prev && { ...prev, excerpt: e.target.value }
+                          (prev) =>
+                            prev && { ...prev, excerpt: e.target.value },
                         )
                       : setExcerpt(e.target.value)
                   }
@@ -165,7 +167,8 @@ export default function Editor() {
                   onChange={(e) =>
                     post
                       ? setPost(
-                          (prev) => prev && { ...prev, content: e.target.value }
+                          (prev) =>
+                            prev && { ...prev, content: e.target.value },
                         )
                       : setContent(e.target.value)
                   }
@@ -181,6 +184,7 @@ export default function Editor() {
                   </ReactMarkdown>
                 </div>
               </div>
+              <ReadTime textColor={"black"} content={post?.content || ""} />
               <div className="flex justify-end gap-3">
                 {post ? (
                   <>

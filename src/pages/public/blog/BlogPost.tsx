@@ -6,6 +6,7 @@ import { usePageTitle } from "../../../lib/usePageTitle";
 import LoadingIcon from "../../../components/micro/LoadingIcon";
 import type { BlogPostType } from "../../../types";
 import { MarkdownComponents } from "../../../lib/MarkDownEdit";
+import ReadTime from "../../../components/ReadTime";
 
 const BlogPost = () => {
   const [post, setPost] = useState<BlogPostType | null>(null);
@@ -45,7 +46,12 @@ const BlogPost = () => {
                 <h2 className="text-2xl capitalize md:text-4xl font-bold mb-10 text-[#e1d3b6] ">
                   {post.title}
                 </h2>
-                <p className="p-2">{post.createdAt.toDate().toDateString()}</p>
+                <div className="flex justify-between items-center">
+                  <p className="p-2">
+                    {post.createdAt.toDate().toDateString()}
+                  </p>
+                  <ReadTime content={post.content} />
+                </div>
                 <p className="border-y border-[#e1d3b6] px-5 py-10 mb-10">
                   {post.excerpt}
                 </p>

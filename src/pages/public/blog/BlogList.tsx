@@ -3,6 +3,7 @@ import { getPosts } from "./getPost";
 import { Link } from "react-router-dom";
 import type { PostType } from "../../../types";
 import LoadingIcon from "../../../components/micro/LoadingIcon";
+import ReadTime from "../../../components/ReadTime";
 
 const BlogList = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
@@ -29,19 +30,20 @@ const BlogList = () => {
             </section>
           ) : posts.length > 0 ? (
             posts.map((post) => (
-              <article key={post.id} className="">
-                <p className="text-sm text-gray-500">
-                  {post.createdAt.toDate().toLocaleDateString()}
-                </p>
-                <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
-                  <Link
-                    to={`/articles/${post.slug}`}
-                    className="text-[#e1d3b6] "
-                  >
+              <Link to={`/articles/${post.slug}`} className="text-[#e1d3b6] ">
+                <article
+                  key={post.id}
+                  className="hover:bg-gray-900 p-5 my-3 rounded-md"
+                >
+                  <p className="text-sm text-gray-500">
+                    {post.createdAt.toDate().toDateString()}
+                  </p>
+                  <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
                     {post.title}
-                  </Link>
-                </h2>
-              </article>
+                  </h2>
+                  <ReadTime content={post.content} />
+                </article>
+              </Link>
             ))
           ) : (
             <p className="text-sm text-center py-20 text-[#ddd] font-semibold">
