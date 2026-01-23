@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import type { PostType, PostStatus } from "../../types";
+import ReadTime from "../ReadTime";
 
 type Props = {
   index: number;
@@ -41,7 +42,7 @@ const PostCard = ({
       <p className="text-gray-600 text-sm mb-3 max-h-10 truncate">
         {post.excerpt}
       </p>
-      <div className="flex flex-wrap md:gap-3 gap-2">
+      <div className="flex flex-wrap items-center md:gap-3 gap-2">
         <p className="text-sm text-gray-500">
           Created: {post.createdAt.toDate().toLocaleDateString()}
         </p>
@@ -50,6 +51,7 @@ const PostCard = ({
             Published: {post.publishedAt.toDate().toLocaleDateString()}
           </p>
         )}
+        <ReadTime textColor="black" content={post.content} />
       </div>
 
       <div className="flex gap-2 items-end py-2">
