@@ -19,11 +19,11 @@ export const MarkdownComponents: Components = {
   li: ({ children }) => <li className="mb-1">{children}</li>,
 
   img: ({ src, alt }) => (
-    <figure className="my-6 max-w-9/12 h-80 mx-auto">
+    <figure className="my-6 max-w-9/12 max-h-80 mx-auto">
       <img
         src={src ?? ""}
         alt={alt ?? ""}
-        className="rounded-lg shadow-md w-full h-full object-cover"
+        className="w-full h-full object-contain"
       />
       {alt && (
         <figcaption className="text-sm text-gray-400 text-center mt-2">
