@@ -48,7 +48,7 @@ const BlogPost = () => {
                 </h2>
                 <div className="flex justify-between items-center">
                   <p className="p-2">
-                    {post.createdAt.toDate().toDateString()}
+                    {post.publishedAt.toDate().toDateString()}
                   </p>
                   <ReadTime content={post.content} />
                 </div>

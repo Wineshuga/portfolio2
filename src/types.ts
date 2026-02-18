@@ -23,5 +23,6 @@ export type BlogPostType = {
   slug: string;
   content: string;
   createdAt: Timestamp
+  publishedAt: Timestamp;
 }
 

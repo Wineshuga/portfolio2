@@ -28,6 +28,7 @@ export async function getPostBySlug(slug: string) {
     excerpt: doc.data().excerpt,
     content: doc.data().content,
     createdAt: doc.data().createdAt,
+    publishedAt: doc.data().publishedAt,
     published: doc.data().published,
   }
 }
