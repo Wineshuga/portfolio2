@@ -17,6 +17,8 @@ const BlogList = () => {
     });
   }, []);
 
+  console.log("posts", posts);
+
   return (
     <section className="min-h-screen py-12 px-4 pt-30 bg-black font-poppins">
       <div className="max-w-4xl mx-auto">
@@ -29,19 +31,20 @@ const BlogList = () => {
               <LoadingIcon />
             </section>
           ) : posts.length > 0 ? (
-            posts.map((post) => (
-              <Link to={`/articles/${post.slug}`} className="text-[#e1d3b6] ">
-                <article
-                  key={post.id}
-                  className="hover:bg-gray-900 p-5 my-3 rounded-md"
-                >
+            posts?.map((post) => (
+              <Link
+                to={`/articles/${post?.slug}`}
+                key={post?.id}
+                className="text-[#e1d3b6] "
+              >
+                <article className="hover:bg-gray-900 p-5 my-3 rounded-md">
                   <p className="text-sm text-gray-500">
-                    {post.publishedAt.toDate().toDateString()}
+                    {post?.publishedAt?.toDate().toDateString()}
                   </p>
                   <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
-                    {post.title}
+                    {post?.title}
                   </h2>
-                  <ReadTime content={post.content} />
+                  <ReadTime content={post?.content} />
                 </article>
               </Link>
             ))
