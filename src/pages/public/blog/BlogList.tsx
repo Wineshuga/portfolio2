@@ -17,8 +17,6 @@ const BlogList = () => {
     });
   }, []);
 
-  console.log("posts", posts);
-
   return (
     <section className="min-h-screen py-12 px-4 pt-30 bg-black font-poppins">
       <div className="max-w-4xl mx-auto">
