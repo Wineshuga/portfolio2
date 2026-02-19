@@ -41,25 +41,25 @@ const BlogPost = () => {
       ) : (
         <>
           {post && (
-            <section key={post.id} className="sm:w-11/12 mx-auto">
-              <article key={post.id} className="mb-8 text-[#ddd]">
+            <section key={post?.id} className="sm:w-11/12 mx-auto">
+              <article key={post?.id} className="mb-8 text-[#ddd]">
                 <h2 className="text-2xl capitalize md:text-4xl font-bold mb-10 text-[#e1d3b6] ">
-                  {post.title}
+                  {post?.title}
                 </h2>
                 <div className="flex justify-between items-center">
                   <p className="p-2">
-                    {post.publishedAt.toDate().toDateString()}
+                    {post?.publishedAt?.toDate().toDateString()}
                   </p>
-                  <ReadTime content={post.content} />
+                  <ReadTime content={post?.content} />
                 </div>
                 <p className="border-y border-[#e1d3b6] px-5 py-10 mb-10">
-                  {post.excerpt}
+                  {post?.excerpt}
                 </p>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={MarkdownComponents}
                 >
-                  {post.content}
+                  {post?.content}
                 </ReactMarkdown>
               </article>
             </section>
