@@ -37,7 +37,7 @@ const BlogList = () => {
               >
                 <article className="hover:bg-gray-900 p-5 my-3 rounded-md">
                   <p className="text-sm text-gray-500">
-                    {post?.publishedAt?.toDate().toDateString()}
+                    {post?.createdAt?.toDate().toDateString()}
                   </p>
                   <h2 className="text-xl font-semibold mb-2 underline hover:no-underline">
                     {post?.title}
