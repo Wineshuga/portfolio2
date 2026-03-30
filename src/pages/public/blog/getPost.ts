@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../firebase";
 import type { PostType } from "../../../types";
 
@@ -6,7 +6,8 @@ export const getPosts = async (status: string): Promise<PostType[]> => {
   const q = query(
     collection(db, "posts"), 
     where("deleted", "==", false),
-    where("status", "==", status)
+    where("status", "==", status),
+    orderBy("createdAt", "desc")
   );
 
   const qForTrash = query(
